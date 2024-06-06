@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!--font -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <!-- swiper cdn link -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <!-- O "Swiper CDN" se refere ao uso de uma Content Delivery Network (CDN) para distribuir os arquivos do "Swiper", 
+        uma biblioteca de código aberto para criar sliders (carrosséis), galerias de imagens, e outros componentes de 
+        interface de usuário interativos em páginas da web ou aplicativos móveis. -->
+        <link
+         rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <!-- css  -->
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!-- inicio do cabeçalho -->
+    
+ <header class="header">
+
+    <a href="inicio.html" class="logo"> <i class="fas fa-pizza-slice"></i>pizza</a>
+    <nav class="navbar">
+        <a href="inicio.html">inicio</a>
+        <a href="sobre_nos.html">sobre nos</a>
+        <a href="menu.html">menu</a>
+        <a href="galeria.html">galeria</a>
+        <a href="contatos.html">contatos</a>
+    </nav>
+
+    <div class="icons">
+        <div id="cart" class="fas fa-shopping-cart"></div>
+        <div id="login" class="fas fa-user"></i></div>
+        <div id="menu" class="fa fa-bars"></div>
+    </div>
+
+    <div class="shopping-cart">
+
+        <div class="box">
+            <i class="fas fa-times"></i>
+            <img src="img/pizza_calabresa_resized.png" alt="">
+            <div class="content">
+                <h3>pizza</h3>
+                <span class="quantidade">1</span>
+                <span class="multiply">x</span>
+                <span class="preço">$ 18.99</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-times"></i>
+            <img src="img/pizza_portuguesa_resized.png" alt="">
+            <div class="content">
+                <h3>pizza</h3>
+                <span class="quantidade">1</span>
+                <span class="multiply">x</span>
+                <span class="preço">$ 18.99</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-times"></i>
+            <img src="img/pizza_queijo_resized.png" alt="">
+            <div class="content">
+                <h3>pizza</h3>
+                <span class="quantidade">1</span>
+                <span class="multiply">x</span>
+                <span class="preço">$ 18.99</span>
+            </div>
+        </div>
+        <h3 class="total">total: #56.97</h3>
+        <a href="#" class="btn">checkout cart</a>
+    </div>
+
+                         <!-- <form>: Esta é uma tag HTML usada para criar um formulário.
+                         O formulário é uma estrutura que permite ao usuário inserir dados que podem ser submetidos para processamento do lado do servidor. -->
+    <form action="" class="login-form">
+        <!-- class="login-form": Este atributo class atribui a classe CSS login-form ao formulário.
+                            Essa classe pode ser usada para estilizar o formulário de acordo com as regras CSS específicas. -->
+                         <!-- action="": O atributo action especifica para onde os dados do formulário serão enviados quando ele for submetido.
+                         Neste caso, o valor está vazio (""), o que significa que o formulário será enviado para a mesma página que está atualmente sendo exibida. -->
+        <h3>login form</h3>
+        <input type="email" placeholder="digite seu email" class="box">
+        <input type="password" placeholder="digite sua senha" class="box">
+        <div class="lembre">
+             <!-- <input> cria uma caixa de seleção (checkbox) no formulário -->
+             <!-- O atributo name define o nome da caixa de seleção. 
+                Como está vazio neste caso, a caixa de seleção não enviará nenhum valor específico quando o formulário for submetido. -->
+             <!-- id="lembre-de-mim": O atributo id atribui um identificador único a essa caixa de seleção. Este identificador é usado para associar a caixa de seleção ao seu rótulo correspondente. -->
+            <input type="checkbox" name="" id="lembre-se">
+            <label for="lembre-se">lembre-se</label>
+        </div>
+        <!-- O atributo value define o texto exibido no botão e a classe  -->
+        <input type="enviar" value="login" class="btn">
+    </form>
+  
+</header>
+
+    <!-- fim do cabeçalho -->
+
+    <div class="cabecalho">
+        <h1>nosso menu</h1>
+        <p><a href="inicio.html">inicio>>></a> menu</p>
+    </div>
+
+    <!-- menu inicio -->
+
+    <section class="menu">
+
+        <div class="swiper menu-slider">
+
+            <div class="swiper-wrapper">
+                 
+                <div class="swiper-slide slide">
+
+                    <h3 class="title">pizza</h3>
+
+                    <div class="box-container">
+
+                        <div class="box" data-name="pizza">
+                            <div class="info">
+                                <h3>pepproni pizza</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box" data-name="pizza">
+                            <div class="info">
+                                <h3>pepproni pizza</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box" data-name="pizza">
+                            <div class="info">
+                                <h3>pepproni pizza</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box" data-name="pizza">
+                            <div class="info">
+                                <h3>pepproni pizza</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box" data-name="pizza">
+                            <div class="info">
+                                <h3>pepproni pizza</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box" data-name="pizza">
+                            <div class="info">
+                                <h3>pepproni pizza</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+        
+
+                    </div>
+
+                </div>
+
+                <div class="swiper-slide slide">
+
+                    <h3 class="title">massas</h3>
+
+                    <div class="box-container">
+
+                        <div class="box" data-name="massas">
+                            <div class="info">
+                                <h3>massas</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box" data-name="massas">
+                            <div class="info">
+                                <h3>massas</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box" data-name="massas">
+                            <div class="info">
+                                <h3>massas</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box" data-name="massas">
+                            <div class="info">
+                                <h3>massas</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box" data-name="massas">
+                            <div class="info">
+                                <h3>massas</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box" data-name="massas">
+                            <div class="info">
+                                <h3>massas</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="swiper-slide slide">
+
+                    <h3 class="title">Sobremessas</h3>
+
+                    <div class="box-container">
+
+                        <div class="box" data-name="sobremessas">
+                            <div class="info">
+                                <h3>sobremessas</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box" data-name="sobremessas">
+                            <div class="info">
+                                <h3>deliciosas sobremessas</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box" data-name="sobremessas" >
+                            <div class="info">
+                                <h3>deliciosas sobremessas</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box">
+                            <div class="info">
+                                <h3>deliciosas sobremessas</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box" data-name="sobremessas">
+                            <div class="info">
+                                <h3>deliciosas sobremessas</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                        <div class="box" data-name="sobremessas">
+                            <div class="info">
+                                <h3>deliciosas sobremessas</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio accusamus quibusdam </p>
+                            </div>
+                            <div class="preco">$56.99</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+        </div>
+
+    </section>
+
+    <!-- menu fim -->
+
+    <!-- vzl menu inicio -->
+
+    <section class="vzl-menu-container">
+        <div id="fechar" class="fas fa-times"></div>
+
+        <div class="vzl-menu" data-target="pizza">
+            <h3>pepproni pizza</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam ut accusantium, nihil rerum, inventore minus earum, cupiditate deleniti praesenti</p>
+            <div class="preco">$56.99</div>
+            <a href="#" class="btn">add no carrinho</a>
+        </div>
+
+        <div class="vzl-menu" data-target="massas">
+            <h3>massas</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam ut accusantium, nihil rerum, inventore minus earum, cupiditate deleniti praesenti</p>
+            <div class="preco">$56.99</div>
+            <a href="#" class="btn">add no carrinho</a>
+        </div>
+
+        <div class="vzl-menu" data-target="sobremessas">
+            <h3>deliciosas sobremessas</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam ut accusantium, nihil rerum, inventore minus earum, cupiditate deleniti praesenti</p>
+            <div class="preco">$56.99</div>
+            <a href="#" class="btn">add no carrinho</a>
+        </div>
+
+    </section>
+
+    <!-- vzl menu fim -->
+
+     <!-- rodapé inicio -->
+
+     <section class="rodape">
+        <div class="box-container">
+
+            <div class="box">
+                <h3>sobre nos</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero pariatur quam voluptates ipsa </p>
+                <div class="compartilhar">
+                    <a href="#" class="fab fa-facebook" aria-hidden="true"></a>
+                    <a href="#" class="fab fa-twitter" aria-hidden="true"></a>
+                    <a href="#" class="fab fa-instagram" aria-hidden="true"></a>
+                    <a href="#" class="fab fa-linkedin" aria-hidden="true"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>contatos</h3>
+                <p>(00) 1234-5678</p>
+                <a href="#" class="link">contato@pizzariaficticia.com.br</a>
+            </div>
+            
+            <div class="box">
+                <h3>endereço</h3>
+                <p>Rua Fictícia, <br>
+                    123, Cidade</p>
+            </div>
+        </div>
+        <div class="creditos">criado por <span>vdsvsv</span> | todos os direitos reservados </div>
+
+    </section>
+
+    <!-- rodapé fim -->
+ 
+    <!-- swiper cdn link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- js link -->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- swiper cdn link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- O "Swiper CDN" se refere ao uso de uma Content Delivery Network (CDN) para distribuir os arquivos do "Swiper", 
+    uma biblioteca de código aberto para criar sliders (carrosséis), galerias de imagens, e outros componentes de 
+    interface de usuário interativos em páginas da web ou aplicativos móveis. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- css  -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 110vh;
+            margin: 0;
+        } */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('img/background.jpg'); /* Substitua pelo caminho da sua imagem */
+            background-size: cover; /* A imagem cobrirá toda a área do body */
+            background-position: center; /* Centraliza a imagem */
+            background-repeat: no-repeat; /* Evita que a imagem se repita */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 110vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin-top: 20px;
+            margin: .7rem 0;
+            padding: 5rem 1.2rem;
+            font-size: 1.5rem;
+            color: #130f40;
+            /* é usada para especificar que nenhum tipo de transformação de capitalização deve ser aplicado ao texto.
+            Isso significa que o texto será exibido exatamente como foi inserido no HTML, sem nenhuma alteração em sua capitalização. */
+            text-transform: none;
+        }
+
+        h2 {
+            color: #130f40;
+            /* altera o estilo do texto para que todas as letras sejam exibidas em maiúsculas. */
+            text-transform: uppercase;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: .7rem;
+        }
+
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-transform: lowercase;
+            
+        }
+
+        .form-group button {
+             /* está fazendo com que um elemento se comporte como um bloco, mas ainda mantenha algumas características de elementos em linha, proporcionando flexibilidade na disposição e no design do layout. */
+            margin-top: 1rem;
+            margin-left: 5rem;
+            padding: .8rem 3rem;
+            border: .1rem solid #130f40;
+            border-radius: .5rem;
+            background: none;
+            color: #130f40;
+            font-size: 1.7rem;
+            /* faz com que o cursor assuma a forma de uma mão, indicando que o elemento é clicável, como um link, botão ou qualquer elemento interativo. */
+            cursor: pointer;
+            position: center;
+        }
+
+        .form-group button:hover {
+            background: #130f40;
+            color: #fff;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <!-- inicio do cabeçalho -->
+    <header class="header">
+        <a href="inicio.html" class="logo"> <i class="fas fa-pizza-slice"></i>pizza</a>
+        <nav class="navbar">
+            <a href="inicio.html">inicio</a>
+            <a href="sobre_nos.html">sobre nos</a>
+            <a href="menu.html">menu</a>
+            <a href="galeria.html">galeria</a>
+            <a href="contatos.html">contatos</a>
+            <a href="cadastro.html">cadastre-se</a>
+        </nav>
+        <div class="icons">
+            <div id="cart" class="fas fa-shopping-cart"></div>
+            <div id="login" class="fas fa-user"></div>
+            <div id="menu" class="fa fa-bars"></div>
+        </div>
+        <div class="shopping-cart">
+            <div class="box">
+                <i class="fas fa-times"></i>
+                <img src="img/pizza_calabresa_resized.png" alt="">
+                <div class="content">
+                    <h3>pizza</h3>
+                    <span class="quantidade">1</span>
+                    <span class="multiply">x</span>
+                    <span class="preço">$ 18.99</span>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-times"></i>
+                <img src="img/pizza_portuguesa_resized.png" alt="">
+                <div class="content">
+                    <h3>pizza</h3>
+                    <span class="quantidade">1</span>
+                    <span class="multiply">x</span>
+                    <span class="preço">$ 18.99</span>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-times"></i>
+                <img src="img/pizza_queijo_resized.png" alt="">
+                <div class="content">
+                    <h3>pizza</h3>
+                    <span class="quantidade">1</span>
+                    <span class="multiply">x</span>
+                    <span class="preço">$ 18.99</span>
+                </div>
+            </div>
+            <h3 class="total">total: #56.97</h3>
+            <a href="#" class="btn">checkout cart</a>
+        </div>
+        <form action="" class="login-form">
+            <h3>login form</h3>
+            <input type="email" placeholder="digite seu email" class="box">
+            <input type="password" placeholder="digite sua senha" class="box">
+            <div class="lembre">
+                <input type="checkbox" name="" id="lembre-se">
+                <label for="lembre-se">lembre-se</label>
+            </div>
+            <input type="submit" value="login" class="btn">
+        </form>
+    </header>
+    <!-- fim do cabeçalho -->
+    
+    <div class="container">
+        <h2>cadastre-se</h2>
+        <form action="/submit" method="post">
+            <div class="form-group">
+                <input type="nome" placeholder="digite seu nome" class="box">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="digite seu email" class="box">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="digite sua senha" class="box">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="confirme sua senha" class="box">
+            </div>
+            <div class="form-group">
+                <button type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+   
+    <!-- swiper cdn link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- js link -->
+    <script src="script.js"></script>
+</body>
+</html>
