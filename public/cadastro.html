@@ -1,31 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!--font -->
+    <!-- font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- swiper cdn link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <!-- O "Swiper CDN" se refere ao uso de uma Content Delivery Network (CDN) para distribuir os arquivos do "Swiper", 
-    uma biblioteca de código aberto para criar sliders (carrosséis), galerias de imagens, e outros componentes de 
-    interface de usuário interativos em páginas da web ou aplicativos móveis. -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <!-- css  -->
+    <!-- css -->
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 110vh;
-            margin: 0;
-        } */
         body {
             font-family: Arial, sans-serif;
             background-image: url('img/background.jpg'); /* Substitua pelo caminho da sua imagem */
@@ -51,20 +37,16 @@
             padding: 5rem 1.2rem;
             font-size: 1.5rem;
             color: #130f40;
-            /* é usada para especificar que nenhum tipo de transformação de capitalização deve ser aplicado ao texto.
-            Isso significa que o texto será exibido exatamente como foi inserido no HTML, sem nenhuma alteração em sua capitalização. */
             text-transform: none;
         }
 
-        h2 {
+        h2, h3 {
             color: #130f40;
-            /* altera o estilo do texto para que todas as letras sejam exibidas em maiúsculas. */
             text-transform: uppercase;
             font-size: 2.2rem;
             text-align: center;
             margin-bottom: .7rem;
         }
-
 
         .form-group {
             margin-bottom: 15px;
@@ -76,30 +58,34 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             text-transform: lowercase;
-            
         }
 
-        .form-group button {
-             /* está fazendo com que um elemento se comporte como um bloco, mas ainda mantenha algumas características de elementos em linha, proporcionando flexibilidade na disposição e no design do layout. */
+        .form-group button, .btn {
             margin-top: 1rem;
-            margin-left: 5rem;
             padding: .8rem 3rem;
             border: .1rem solid #130f40;
             border-radius: .5rem;
             background: none;
             color: #130f40;
             font-size: 1.7rem;
-            /* faz com que o cursor assuma a forma de uma mão, indicando que o elemento é clicável, como um link, botão ou qualquer elemento interativo. */
             cursor: pointer;
-            position: center;
         }
 
-        .form-group button:hover {
+        .form-group button:hover, .btn:hover {
             background: #130f40;
             color: #fff;
         }
 
-       
+        .form-group .show-password {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .form-group .show-password input {
+            width: auto;
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
@@ -113,6 +99,7 @@
             <a href="galeria.html">galeria</a>
             <a href="contatos.html">contatos</a>
             <a href="cadastro.html">cadastre-se</a>
+            <a href="perfil.html">perfil</a>
         </nav>
         <div class="icons">
             <div id="cart" class="fas fa-shopping-cart"></div>
@@ -150,43 +137,130 @@
                     <span class="preço">$ 18.99</span>
                 </div>
             </div>
-            <h3 class="total">total: #56.97</h3>
+            <h3 class="total">total: $56.97</h3>
             <a href="#" class="btn">checkout cart</a>
         </div>
         <form action="" class="login-form">
             <h3>login form</h3>
-            <input type="email" placeholder="digite seu email" class="box">
-            <input type="password" placeholder="digite sua senha" class="box">
+            <div class="form-group">
+                <input type="email" id="loginEmail" placeholder="digite seu email" class="box" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="loginSenha" placeholder="digite sua senha" class="box" required>
+            </div>
             <div class="lembre">
                 <input type="checkbox" name="" id="lembre-se">
                 <label for="lembre-se">lembre-se</label>
+            </div>
+            <div class="form-group show-password">
+                <input type="checkbox" id="mostrarLoginSenha">
+                <label for="mostrarLoginSenha">Mostrar senha</label>
             </div>
             <input type="submit" value="login" class="btn">
         </form>
     </header>
     <!-- fim do cabeçalho -->
-    
+
     <div class="container">
         <h2>cadastre-se</h2>
-        <form action="/submit" method="post">
+        <form id="cadastroForm">
             <div class="form-group">
-                <input type="nome" placeholder="digite seu nome" class="box">
+                <input type="text" id="nome" placeholder="digite seu nome" class="box">
             </div>
             <div class="form-group">
-                <input type="email" placeholder="digite seu email" class="box">
+                <input type="email" id="email" placeholder="digite seu email" class="box">
             </div>
             <div class="form-group">
-                <input type="password" placeholder="digite sua senha" class="box">
+                <input type="password" id="senha" placeholder="digite sua senha" class="box">
             </div>
             <div class="form-group">
-                <input type="password" placeholder="confirme sua senha" class="box">
+                <input type="password" id="confirmaSenha" placeholder="confirme sua senha" class="box">
+            </div>
+            <div class="form-group show-password">
+                <input type="checkbox" id="mostrarSenhas">
+                <label for="mostrarSenhas">Mostrar senhas</label>
             </div>
             <div class="form-group">
-                <button type="submit">Cadastrar</button>
+                <button type="button" id="saveButton">Cadastrar</button>
             </div>
         </form>
     </div>
-   
+
+    <script>
+        // Salvar dados de cadastro no localStorage
+        document.getElementById('saveButton').addEventListener('click', function() {
+            let nome = document.getElementById('nome').value;
+            let email = document.getElementById('email').value;
+            let senha = document.getElementById('senha').value;
+            let confirmaSenha = document.getElementById('confirmaSenha').value;
+
+            if (senha !== confirmaSenha) {
+                alert('As senhas não coincidem!');
+                return;
+            }
+
+            localStorage.setItem('nome', nome);
+            localStorage.setItem('email', email);
+            localStorage.setItem('senha', senha);
+
+            alert('Dados salvos!');
+        });
+
+        // Verificar login
+        document.querySelector('.login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let loginEmail = document.getElementById('loginEmail').value;
+            let loginSenha = document.getElementById('loginSenha').value;
+
+            let storedEmail = localStorage.getItem('email');
+            let storedSenha = localStorage.getItem('senha');
+
+            if (loginEmail === storedEmail && loginSenha === storedSenha) {
+                alert('Login bem-sucedido!');
+            } else {
+                alert('Email ou senha incorretos!');
+            }
+        });
+
+        // Preencher dados do formulário de cadastro, se existirem
+        document.addEventListener('DOMContentLoaded', function() {
+            let nome = localStorage.getItem('nome');
+            let email = localStorage.getItem('email');
+            let senha = localStorage.getItem('senha');
+
+            if (nome || email || senha) {
+                document.getElementById('nome').value = nome;
+                document.getElementById('email').value = email;
+                document.getElementById('senha').value = senha;
+                document.getElementById('confirmaSenha').value = senha;
+            }
+        });
+
+        // Mostrar/ocultar senhas no cadastro
+        document.getElementById('mostrarSenhas').addEventListener('change', function() {
+            let senha = document.getElementById('senha');
+            let confirmaSenha = document.getElementById('confirmaSenha');
+            if (this.checked) {
+                senha.type = 'text';
+                confirmaSenha.type = 'text';
+            } else {
+                senha.type = 'password';
+                confirmaSenha.type = 'password';
+            }
+        });
+
+        // Mostrar/ocultar senha no login
+        document.getElementById('mostrarLoginSenha').addEventListener('change', function() {
+            let loginSenha = document.getElementById('loginSenha');
+            if (this.checked) {
+                loginSenha.type = 'text';
+            } else {
+                loginSenha.type = 'password';
+            }
+        });
+    </script>
+
     <!-- swiper cdn link -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- js link -->
