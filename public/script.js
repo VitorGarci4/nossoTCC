@@ -96,3 +96,28 @@ vzlContainer.querySelector('#fechar').onclick = () =>{
         close.classList.remove('active')
     });
 };
+
+const mostrarSenhaOlho = document.getElementById('mostrarSenhaOlho');
+const confirmarSenhaOlho = document.getElementById('confirmarSenhaOlho');
+const senhaInput = document.getElementById('senha');
+const confirmarSenhaInput = document.getElementById('confirmaSenha');
+
+mostrarSenhaOlho.addEventListener('mousedown', function() {
+  senhaInput.type = 'text';
+  this.classList.add('fa-eye-slash');
+});
+
+mostrarSenhaOlho.addEventListener('mouseup', function() {
+  senhaInput.type = 'password';
+  this.classList.remove('fa-eye-slash');
+});
+
+confirmarSenhaOlho.addEventListener('mousedown', function() {
+  confirmarSenhaInput.type = 'text';
+  this.classList.add('fa-eye-slash');
+});
+
+confirmarSenhaOlho.addEventListener('mouseup', function() {
+  confirmarSenhaInput.type = 'password';
+  this.classList.remove('fa-eye-slash');
+});

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +11,13 @@
     <!-- O "Swiper CDN" se refere ao uso de uma Content Delivery Network (CDN) para distribuir os arquivos do "Swiper", 
     uma biblioteca de código aberto para criar sliders (carrosséis), galerias de imagens, e outros componentes de 
     interface de usuário interativos em páginas da web ou aplicativos móveis. -->
-    <link
-     rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- css  -->
     <link rel="stylesheet" href="style.css">
 
     <script async src="carrinho.js"></script>
 </head>
 <body>
-
 
     <!-- inicio do cabeçalho -->
     
@@ -38,7 +36,7 @@
 
         <div class="icons">
             <div id="cart" class="fas fa-shopping-cart"></div>
-            <div id="login" class="fas fa-user"></i></div>
+            <div id="login" class="fas fa-user"></div>
             <div id="menu" class="fa fa-bars"></div>
         </div>
 
@@ -51,7 +49,7 @@
                     <h3>pizza</h3>
                     <span class="quantidade">1</span>
                     <span class="multiply">x</span>
-                    <span class="preço">$ 18.99</span>
+                    <span class="price">$18.99</span>
                 </div>
             </div>
 
@@ -62,7 +60,7 @@
                     <h3>pizza</h3>
                     <span class="quantidade">1</span>
                     <span class="multiply">x</span>
-                    <span class="preço">$ 18.99</span>
+                    <span class="price">$18.99</span>
                 </div>
             </div>
 
@@ -73,33 +71,22 @@
                     <h3>pizza</h3>
                     <span class="quantidade">1</span>
                     <span class="multiply">x</span>
-                    <span class="preço">$ 18.99</span>
+                    <span class="price">$18.99</span>
                 </div>
             </div>
-            <h3 class="total">total: #56.97</h3>
-            <a href="#" class="btn">checkout cart</a>
+            <h3 class="total">total: $56.97</h3>
+            <a href="#" class="btncompra">checkout cart</a>
         </div>
 
-                             <!-- <form>: Esta é uma tag HTML usada para criar um formulário.
-                             O formulário é uma estrutura que permite ao usuário inserir dados que podem ser submetidos para processamento do lado do servidor. -->
         <form action="" class="login-form">
-            <!-- class="login-form": Este atributo class atribui a classe CSS login-form ao formulário.
-                                Essa classe pode ser usada para estilizar o formulário de acordo com as regras CSS específicas. -->
-                             <!-- action="": O atributo action especifica para onde os dados do formulário serão enviados quando ele for submetido.
-                             Neste caso, o valor está vazio (""), o que significa que o formulário será enviado para a mesma página que está atualmente sendo exibida. -->
             <h3>login form</h3>
             <input type="email" placeholder="digite seu email" class="box">
             <input type="password" placeholder="digite sua senha" class="box">
             <div class="lembre">
-                 <!-- <input> cria uma caixa de seleção (checkbox) no formulário -->
-                 <!-- O atributo name define o nome da caixa de seleção. 
-                    Como está vazio neste caso, a caixa de seleção não enviará nenhum valor específico quando o formulário for submetido. -->
-                 <!-- id="lembre-de-mim": O atributo id atribui um identificador único a essa caixa de seleção. Este identificador é usado para associar a caixa de seleção ao seu rótulo correspondente. -->
                 <input type="checkbox" name="" id="lembre-se">
                 <label for="lembre-se">lembre-se</label>
             </div>
-            <!-- O atributo value define o texto exibido no botão e a classe  -->
-            <input type="enviar" value="login" class="btn">
+            <input type="submit" value="login" class="btnlogin">
         </form>
       
     </header>
@@ -232,7 +219,7 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <div class="preço">$15.99 <span>$20.99</span></div>
+                <div class="price">$15.99 <span>$20.99</span></div>
                 <a href="#" class="btn">add no carrinho</a>
             </div>
 
@@ -247,7 +234,7 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <div class="preço">$15.99 <span>$20.99</span></div>
+                <div class="price">$15.99 <span>$20.99</span></div>
                 <a href="#" class="btn">add no carrinho</a>
             </div>
 
@@ -262,17 +249,12 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <div class="preço">$15.99 <span>$20.99</span></div>
+                <div class="price">$15.99 <span>$20.99</span></div>
                 <a href="#" class="btn">add no carrinho</a>
             </div>
-
+            
         </div>
-    </section>
-
-    <!-- pizza menu fim -->
-
-    <!-- rodapé inicio -->
-
+   
     <section class="rodape">
         <div class="box-container">
 

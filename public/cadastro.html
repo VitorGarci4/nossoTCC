@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro</title>
     <!-- font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- swiper cdn link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- css -->
     <link rel="stylesheet" href="style.css">
-
-    <script async src="carrinho.js"></script>
 
     <style>
         body {
@@ -34,24 +32,28 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
-            margin-top: 20px;
+            margin-top: 10px;
             margin: .7rem 0;
-            padding: 5rem 1.2rem;
+            padding: 2rem 1.9rem;
             font-size: 1.5rem;
             color: #130f40;
             text-transform: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         h2, h3 {
             color: #130f40;
-            text-transform: uppercase;
-            font-size: 2.2rem;
+            font-size: 2.6rem;
             text-align: center;
-            margin-bottom: .7rem;
+            margin-bottom: .37rem;
         }
 
         .form-group {
             margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
         }
 
         .form-group input {
@@ -78,16 +80,6 @@
             color: #fff;
         }
 
-        .form-group .show-password {
-            display: flex;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .form-group .show-password input {
-            width: auto;
-            margin-right: 5px;
-        }
     </style>
 </head>
 <body>
@@ -142,59 +134,52 @@
             <h3 class="total">total: $56.97</h3>
             <a href="#" class="btn">checkout cart</a>
         </div>
-        <form action="" class="login-form">
+        <form class="login-form">
             <h3>login form</h3>
-            <div class="form-group">
-                <input type="email" id="loginEmail" placeholder="digite seu email" class="box" required>
-            </div>
-            <div class="form-group">
-                <input type="password" id="loginSenha" placeholder="digite sua senha" class="box" required>
-            </div>
+            <input type="email" placeholder="digite seu email" class="box" id="loginEmail">
+            <input type="password" placeholder="digite sua senha" class="box" id="loginSenha">
             <div class="lembre">
                 <input type="checkbox" name="" id="lembre-se">
                 <label for="lembre-se">lembre-se</label>
             </div>
-            <div class="form-group show-password">
-                <input type="checkbox" id="mostrarLoginSenha">
-                <label for="mostrarLoginSenha">Mostrar senha</label>
-            </div>
-            <input type="submit" value="login" class="btn">
+            <input type="button" value="login" class="btnlogin">
         </form>
     </header>
     <!-- fim do cabeçalho -->
 
     <div class="container">
-        <h2>cadastre-se</h2>
+        <h2>Cadastre-se</h2>
         <form id="cadastroForm">
             <div class="form-group">
-                <input type="text" id="nome" placeholder="digite seu nome" class="box">
+                <input type="text" id="nome" placeholder="Digite seu nome" class="box">
             </div>
             <div class="form-group">
-                <input type="email" id="email" placeholder="digite seu email" class="box">
+                <input type="email" id="email" placeholder="Digite seu email" class="box">
             </div>
             <div class="form-group">
-                <input type="password" id="senha" placeholder="digite sua senha" class="box">
+                <input type="password" id="senha" placeholder="Digite sua senha" class="box">
             </div>
             <div class="form-group">
-                <input type="password" id="confirmaSenha" placeholder="confirme sua senha" class="box">
+                <input type="password" id="confirmaSenha" placeholder="Confirme sua senha" class="box">
             </div>
-            <div class="form-group show-password">
-                <input type="checkbox" id="mostrarSenhas">
-                <label for="mostrarSenhas">Mostrar senhas</label>
+            <div class="form-group">
+                <input type="text" id="endereco" placeholder="Nos informe seu endereço" class="box">
             </div>
             <div class="form-group">
                 <button type="button" id="saveButton">Cadastrar</button>
             </div>
         </form>
     </div>
+    
 
     <script>
-        // Salvar dados de cadastro no localStorage
+        
         document.getElementById('saveButton').addEventListener('click', function() {
             let nome = document.getElementById('nome').value;
             let email = document.getElementById('email').value;
             let senha = document.getElementById('senha').value;
             let confirmaSenha = document.getElementById('confirmaSenha').value;
+            let endereco = document.getElementById('endereco').value;
 
             if (senha !== confirmaSenha) {
                 alert('As senhas não coincidem!');
@@ -204,6 +189,7 @@
             localStorage.setItem('nome', nome);
             localStorage.setItem('email', email);
             localStorage.setItem('senha', senha);
+            localStorage.setItem('endereco', endereco);
 
             alert('Dados salvos!');
         });
@@ -220,6 +206,7 @@
 
             if (loginEmail === storedEmail && loginSenha === storedSenha) {
                 alert('Login bem-sucedido!');
+                window.location.href = 'perfil.html'; // Redireciona para a página de perfil
             } else {
                 alert('Email ou senha incorretos!');
             }
@@ -230,37 +217,17 @@
             let nome = localStorage.getItem('nome');
             let email = localStorage.getItem('email');
             let senha = localStorage.getItem('senha');
+            let endereco = localStorage.getItem('endereco');
 
-            if (nome || email || senha) {
-                document.getElementById('nome').value = nome;
-                document.getElementById('email').value = email;
+            if (nome) document.getElementById('nome').value = nome;
+            if (email) document.getElementById('email').value = email;
+            if (senha) {
                 document.getElementById('senha').value = senha;
                 document.getElementById('confirmaSenha').value = senha;
             }
+            if (endereco) document.getElementById('endereco').value = endereco;
         });
 
-        // Mostrar/ocultar senhas no cadastro
-        document.getElementById('mostrarSenhas').addEventListener('change', function() {
-            let senha = document.getElementById('senha');
-            let confirmaSenha = document.getElementById('confirmaSenha');
-            if (this.checked) {
-                senha.type = 'text';
-                confirmaSenha.type = 'text';
-            } else {
-                senha.type = 'password';
-                confirmaSenha.type = 'password';
-            }
-        });
-
-        // Mostrar/ocultar senha no login
-        document.getElementById('mostrarLoginSenha').addEventListener('change', function() {
-            let loginSenha = document.getElementById('loginSenha');
-            if (this.checked) {
-                loginSenha.type = 'text';
-            } else {
-                loginSenha.type = 'password';
-            }
-        });
     </script>
 
     <!-- swiper cdn link -->
